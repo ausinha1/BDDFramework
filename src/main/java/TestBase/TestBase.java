@@ -17,7 +17,7 @@ public class TestBase {
 	public static WebDriver driver;
 	public static Properties prop;
 
-	//my base class
+	//my base class ..
 	public TestBase(){
 		try {
 			prop = new Properties();
