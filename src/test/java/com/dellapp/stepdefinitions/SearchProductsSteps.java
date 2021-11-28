@@ -15,11 +15,13 @@ import Pages.Laptop;
 import TestBase.TestBase;
 import io.cucumber.java.After;
 import io.cucumber.java.Before;
+import io.cucumber.java.Scenario;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import org.junit.Assert;
 
 public class SearchProductsSteps extends TestBase{
+	
 
 	Home objHome;
 	Laptop objLaptop;
@@ -34,8 +36,13 @@ public class SearchProductsSteps extends TestBase{
 		
 	}
 	
+	
 	@After
-	public void teardown() {
+	public void teardown(Scenario scenario) {
+		if(scenario.isFailed()) {
+			byte[] screenshot = takeScreenshot(); 
+			scenario.attach(screenshot, "image/png", "Failed step screenshot");
+			  }
 		driver.quit();
 	}
 	
@@ -64,6 +71,21 @@ public class SearchProductsSteps extends TestBase{
 	public void user_verifies_DestopsComputersPage() {
 		 Assert.assertTrue("DestopsComputersPage is not displayed",objDesktop.verifyDesktopComputersPageIsDisplayed());
 	}
+	
+	@Then("^User enters laptop type as \"(.*)\" and verifies the searched page$")
+	public void user_enters_laptoptype_and_verifies_the_searchedpage(String laptopType) {
+		if(laptopType.equalsIgnoreCase("Inspiron")) {
+			objLaptop.clickInspironCheckbox();
+			Assert.assertTrue("Inspiron page is not displayed",objLaptop.verifyInspironPageIsDisplayed());
+		}
+		else if(laptopType.equalsIgnoreCase("XPS")) {
+			objLaptop.clickXpsCheckbox();
+			Assert.assertTrue("XPS page is not displayed",objLaptop.verifyXpsPageIsDisplayed());
+		}
+		
+		 
+	}
+	
 	
 	
 

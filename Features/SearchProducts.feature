@@ -6,8 +6,21 @@ Feature: Dell app product tests
 		Then User navigates to Laptop from home
 		Then User verifies LaptopComputersPage
 		
-	@Smoke	
+	@Regression	
 	Scenario: Search a Desktop
 		Given User launched dell site
 		Then User navigates to Desktops from home
 		Then User verifies DestopsComputersPage
+		
+	@Smoke	
+	Scenario Outline: Go to laptops and search for laptop type
+		Given User launched dell site
+		Then User navigates to Laptop from home
+		Then User verifies LaptopComputersPage
+		Then User enters laptop type as "<laptoptype>" and verifies the searched page
+		
+		Examples:
+		| laptoptype |
+		|	Inspiron |
+		|	XPS |
+		
