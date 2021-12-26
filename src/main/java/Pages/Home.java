@@ -25,12 +25,21 @@ public class Home extends TestBase{
 	@FindBy(xpath="//a[@href='//www.dell.com/en-uk/shop/scc/sc/desktops']")
 	WebElement linkDesktopsForHome;
 	
+	@FindBy(xpath="//a[text()='Accept All']")
+	WebElement buttonAcceptAll;
+	
+	
+	
 	
 	
 	public Home() {
 		PageFactory.initElements(driver, this);
 	}
 	
+	
+	public void clickAcceptAll() {
+		buttonAcceptAll.click();
+	}
 	
 	public void moveToLaptopForHome() {
 		linkProducts.click();

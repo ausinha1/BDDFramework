@@ -49,6 +49,7 @@ public class SearchProductsSteps extends TestBase{
 	@Given("^User launched dell site$")
 	public void user_launched_dell_site() throws IOException {
 		driver.get(prop.getProperty("url"));
+		objHome.clickAcceptAll();
 		
 	}
 	

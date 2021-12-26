@@ -5,8 +5,13 @@ import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 
 import TestBase.TestBase;
+import util.JavaScriptHelper;
+import util.WaitHelper;
 
 public class Laptop extends TestBase{
+	
+	JavaScriptHelper objJS = new JavaScriptHelper();
+	WaitHelper objWait = new WaitHelper();
 	
 	@FindBy(xpath="//h1[text()='Laptop Computers & 2-in-1 PCs']")
 	WebElement labelLaptopComputers;
@@ -34,10 +39,14 @@ public class Laptop extends TestBase{
 	}
 	
 	public void clickInspironCheckbox() {
+		objJS.jsScrollToElement(checkBoxInspiron);
+		objWait.waitForSomeTime(2);
 		checkBoxInspiron.click();
 	}
 	
 	public void clickXpsCheckbox() {
+		objJS.jsScrollToElement(checkBoxXps);
+		objWait.waitForSomeTime(2);
 		checkBoxXps.click();
 	}
 	
