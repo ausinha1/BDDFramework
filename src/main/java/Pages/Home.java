@@ -16,7 +16,7 @@ public class Home extends TestBase{
 	@FindBy(xpath="//li/a[text()='Laptops']")
 	WebElement linkLaptops;
 	
-	@FindBy(xpath="//li/a[text()='Desktops & All-in-One PCs']")
+	@FindBy(xpath="//li/a[text()='Desktops']")
 	WebElement linkDesktops;
 	
 	@FindBy(xpath="//a[@href='//www.dell.com/en-uk/shop/scc/sc/laptops']")
