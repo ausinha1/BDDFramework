@@ -9,7 +9,7 @@ import io.cucumber.junit.Cucumber;
 @CucumberOptions(features="Features",glue={"com.dellapp.stepdefinitions"},
 plugin = { "pretty","html:target/cucumber-reports/cucumber.html", "json:target/cucumber-reports/cucumber.json"},
 monochrome=true,
-tags="@Smoke")
+tags="@Smoke or @Regression")
 public class TestRunner {
 	
 }
