@@ -9,7 +9,7 @@ import TestBase.TestBase;
 public class Desktop extends TestBase {
 	
 	
-	@FindBy(xpath="//a[text()='Inspiron Desktops']")
+	@FindBy(xpath="//h1[text()='Desktop Computers']")
 	WebElement labelInspironDesktops;
 	
 	public Desktop() {
